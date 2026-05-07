@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class XII Biology | NCERT CBSE Study Portal</title>
+    <meta name="description"
+        content="Complete Class XII Biology NCERT CBSE study portal covering all chapters from both books – Reproduction, Genetics, Biology in Human Welfare, Biotechnology, and Ecology." />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --bg: #0a0f1e;
+            --surface: #111827;
+            --card: #1a2235;
+            --border: #1e2d45;
+            --accent: #22d3ee;
+            --accent2: #6366f1;
+            --accent3: #34d399;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --unit1: #22d3ee;
+            --unit2: #f472b6;
+            --unit3: #34d399;
+            --unit4: #a78bfa;
+            --unit5: #fb923c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(10, 15, 30, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.9rem 2rem;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .nav-logo .icon {
+            font-size: 1.6rem;
+        }
+
+        .nav-logo span {
+            font-weight: 700;
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 2rem;
+            background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(34, 211, 238, 0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 50% at 80% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 60%),
+                var(--bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(34, 211, 238, 0.1);
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            border-radius: 999px;
+            padding: 0.4rem 1rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 30%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat .num {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .stat .label {
+            font-size: 0.8rem;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .scroll-hint {
+            margin-top: 3rem;
+            color: var(--muted);
+            font-size: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .scroll-hint .arrow {
+            animation: bounce 1.5s infinite;
+            font-size: 1.2rem;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(6px)
+            }
+        }
+
+        /* UNITS SECTION */
+        main {
+            padding-top: 5rem;
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .unit-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            margin-bottom: 0.6rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .section-header p {
+            color: var(--muted);
+        }
+
+        /* CHAPTER GRID */
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .chapter-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.4rem 1.5rem;
+            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .chapter-num {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .chapter-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .chapter-desc {
+            font-size: 0.82rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        .chapter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.8rem;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 999px;
+            font-weight: 500;
+            opacity: 0.85;
+        }
+
+        /* UNIT COLOR THEMES */
+        .u1 .chapter-card::before {
+            background: var(--unit1);
+        }
+
+        .u1 .chapter-card:hover {
+            border-color: var(--unit1);
+        }
+
+        .u1 .chapter-num,
+        .u1 .tag {
+            color: var(--unit1);
+        }
+
+        .u1 .tag {
+            background: rgba(34, 211, 238, 0.12);
+        }
+
+        .u1 .unit-label {
+            background: rgba(34, 211, 238, 0.1);
+            color: var(--unit1);
+        }
+
+        .u2 .chapter-card::before {
+            background: var(--unit2);
+        }
+
+        .u2 .chapter-card:hover {
+            border-color: var(--unit2);
+        }
+
+        .u2 .chapter-num,
+        .u2 .tag {
+            color: var(--unit2);
+        }
+
+        .u2 .tag {
+            background: rgba(244, 114, 182, 0.12);
+        }
+
+        .u2 .unit-label {
+            background: rgba(244, 114, 182, 0.1);
+            color: var(--unit2);
+        }
+
+        .u3 .chapter-card::before {
+            background: var(--unit3);
+        }
+
+        .u3 .chapter-card:hover {
+            border-color: var(--unit3);
+        }
+
+        .u3 .chapter-num,
+        .u3 .tag {
+            color: var(--unit3);
+        }
+
+        .u3 .tag {
+            background: rgba(52, 211, 153, 0.12);
+        }
+
+        .u3 .unit-label {
+            background: rgba(52, 211, 153, 0.1);
+            color: var(--unit3);
+        }
+
+        .u4 .chapter-card::before {
+            background: var(--unit4);
+        }
+
+        .u4 .chapter-card:hover {
+            border-color: var(--unit4);
+        }
+
+        .u4 .chapter-num,
+        .u4 .tag {
+            color: var(--unit4);
+        }
+
+        .u4 .tag {
+            background: rgba(167, 139, 250, 0.12);
+        }
+
+        .u4 .unit-label {
+            background: rgba(167, 139, 250, 0.1);
+            color: var(--unit4);
+        }
+
+        .u5 .chapter-card::before {
+            background: var(--unit5);
+        }
+
+        .u5 .chapter-card:hover {
+            border-color: var(--unit5);
+        }
+
+        .u5 .chapter-num,
+        .u5 .tag {
+            color: var(--unit5);
+        }
+
+        .u5 .tag {
+            background: rgba(251, 146, 60, 0.12);
+        }
+
+        .u5 .unit-label {
+            background: rgba(251, 146, 60, 0.1);
+            color: var(--unit5);
+        }
+
+        /* DIVIDER */
+        .divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 0 2rem;
+        }
+
+        /* QUICK NAV */
+        .quick-nav {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .quick-btn {
+            padding: 0.5rem 1.2rem;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .quick-btn:hover {
+            color: var(--text);
+            border-color: var(--accent);
+            background: rgba(34, 211, 238, 0.08);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        footer span {
+            color: var(--accent);
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:640px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-logo">
+            <span class="icon">🧬</span>
+            <span>BioXII Portal</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#unit1">Reproduction</a></li>
+            <li><a href="#unit2">Genetics</a></li>
+            <li><a href="#unit3">Welfare</a></li>
+            <li><a href="#unit4">Biotechnology</a></li>
+            <li><a href="#unit5">Ecology</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-badge">📚 NCERT · CBSE · Class XII Biology</div>
+        <h1>Master Biology<br />For Class XII</h1>
+        <p>A complete structured guide to all NCERT chapters — organized by units, enriched with key topics to help you
+            ace your board exams.</p>
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="num">16</div>
+                <div class="label">Chapters</div>
+            </div>
+            <div class="stat">
+                <div class="num">5</div>
+                <div class="label">Units</div>
+            </div>
+            <div class="stat">
+                <div class="num">2</div>
+                <div class="label">Books</div>
+            </div>
+            <div class="stat">
+                <div class="num">70</div>
+                <div class="label">Marks (Theory)</div>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <span>Scroll to explore</span>
+            <span class="arrow">↓</span>
+        </div>
+    </header>
+
+    <!-- QUICK NAV -->
+    <div class="quick-nav">
+        <a class="quick-btn" href="#unit1">Unit 1 – Reproduction</a>
+        <a class="quick-btn" href="#unit2">Unit 2 – Genetics & Evolution</a>
+        <a class="quick-btn" href="#unit3">Unit 3 – Biology in Human Welfare</a>
+        <a class="quick-btn" href="#unit4">Unit 4 – Biotechnology</a>
+        <a class="quick-btn" href="#unit5">Unit 5 – Ecology</a>
+    </div>
+
+    <main>
+
+        <!-- ==================== UNIT 1 ==================== -->
+        <section id="unit1" class="section u1">
+            <div class="section-header">
+                <span class="unit-label">Unit I · Chapters 1–4</span>
+                <h2>Reproduction</h2>
+                <p>Understand how organisms reproduce — from flowering plants to human beings.</p>
+            </div>
+            <div class="chapter-grid">
+
+                <div class="chapter-card">
+                    <div class="chapter-num">Chapter 1</div>
+                    <div class="chapter-title">Reproduction in Organisms</div>
+                    <div class="chapter-desc">Introduction to asexual and sexual reproduction, life span of organisms,
+                        modes of asexual reproduction — binary fission, budding, fragmentation, vegetative propagation.
+                    </div>
+                    <div class="chapter-tags">
+                        <span class="tag">Asexual Reproduction</span>
+                        <span class="tag">Sexual Reproduction</span>
+                        <span class="tag">Life Span</span>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-num">Chapter 2</div>
+                    <div class="chapter-title">Sexual Reproduction in Flowering Plants</div>
+                    <div class="chapter-desc">Flower structure, microsporogenesis, megasporogenesis, pollination types,
+                        double fertilisation, post-fertilisation events, endosperm, embryo, seed and fruit development.
+                    </div>
+                    <div class="chapter-tags">
+                        <span class="tag">Pollination</span>
+                        <span class="tag">Double Fertilisation</span>
+                        <span class="tag">Embryogenesis</span>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-num">Chapter 3</div>
+                    <div class="chapter-title">Human Reproduction</div>
+                    <div class="chapter-desc">Male and female reproductive systems, gametogenesis (spermatogenesis &
+                        oogenesis), menstrual cycle, fertilisation, implantation, embryonic development, parturition,
+                        lactation.</div>
+                    <div class="chapter-tags">
+                        <span class="tag">Gametogenesis</span>
+                        <span class="tag">Menstrual Cycle</span>
+                        <span class="tag">Embryology</span>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-num">Chapter 4</div>
+                    <div class="chapter-title">Reproductive Health</div>
+                    <div class="chapter-desc">Reproductive health and problems, STIs, birth control methods, MTP,
+                        infertility causes and assisted reproductive technologies (IVF, ZIFT, GIFT), amniocentesis.
+                    </div>
+                    <div class="chapter-tags">
+                        <span class="tag">Birth Control</span>
+                        <span class="tag">STIs</span>
+                        <span class="tag">ART</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <hr class="divider" />
+
+        <!-- ==================== UNIT 2 ==================== -->
+        <section id="unit2" class="section u2">
+            <div class="section-header">
+                <span class="unit-label">Unit II · Chapters 5–8</span>
+                <h2>Genetics & Evolution</h2>
+                <p>From Mendel's peas to molecular evolution — understand heredity at every level.</p>
+            </div>
+            <div class="chapter-grid">
+
+                <div class="chapter-card">
+                    <div class="chapter-num">Chapter 5</div>
+                    <div class="chapter-title">Principles of Inheritance & Variation</div>
+                    <div class="chapter-desc">Mendel's laws, monohybrid & dihybrid crosses, incomplete dominance,
+                        codominance, multiple alleles, polygenic inheritance, pleiotropy, sex determination, linkage,
+                        crossing over, chromosomal disorders.</div>
+                    <div class="chapter-tags">
+                        <span class="tag">Mendel's Laws</span>
+                        <span class="tag">Chromosomal Disorders</span>
+                        <span class="tag">Sex Determination</span>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-num">Chapter 6</div>
+                    <div class="chapter-title">Molecular Basis of Inheritance</div>
+                    <div class="chapter-desc">DNA structure, RNA types, DNA replication, transcription, translation,
+                        genetic code, lac operon, Human Genome Project, DNA fingerprinting, central dogma.</div>
+                    <div class="chapter-tags">
+                        <span class="tag">DNA Replication</span>
+                        <span class="tag">Transcription</span>
+                        <span class="tag">DNA Fingerprinting</span>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-num">Chapter 7</div>
+                    <div class="chapter-title">Evolution</div>
+                    <div class="chapter-desc">Origin of life, theories of evolution, Darwinism, natural selection,
+                        Hardy-Weinberg principle, adaptive radiation, human evolution, speciation, evidence of
+                        evolution.</div>
+                    <div class="chapter-tags">
+                        <span class="tag">Natural Selection</span>
+                        <span class="tag">Hardy-Weinberg</span>
+                        <span class="tag">Human Evolution</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <hr class="divider" />
+
+        <!-- ==================== UNIT 3 ==================== -->
+        <section id="unit3" class="section u3">
+            <div class="section-header">
+                <span class="unit-label">Unit III · Chapters 8–10</span>
+                <h2>Biology in Human Welfare</h2>
+                <p>How biology impacts health, agriculture, and society.</p>
+            </div>
+            <div class="chapter-grid">
+
+                <div class="chapter-card">
+                    <div class="chapter-num">Chapter 8</div>
+                    <div class="chapter-title">Human Health & Disease</div>
+                    <div class="chapter-desc">Common diseases (typhoid, pneumonia, malaria, amoebiasis, ascariasis,
+                        filariasis, dengue), immunity types, vaccines, AIDS, cancer, drugs and alcohol abuse.</div>
+                    <div class="chapter-tags">
+                        <span class="tag">Immunity</span>
+                        <span class="tag">Vaccines</span>
+                        <span class="tag">AIDS</span>
+                        <span class="tag">Cancer</span>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-num">Chapter 9</div>
+                    <div class="chapter-title">Strategies for Enhancement in Food Production</div>
+                    <div class="chapter-desc">Animal husbandry, plant breeding techniques, biofortification, SCP (single
+                        cell protein), tissue culture, hybridisation, inbreeding and outbreeding.</div>
+                    <div class="chapter-tags">
+                        <span class="tag">Plant Breeding</span>
+                        <span class="tag">Animal Husbandry</span>
+                        <span class="tag">Tissue Culture</span>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-num">Chapter 10</div>
+                    <div class="chapter-title">Microbes in Human Welfare</div>
+                    <div class="chapter-desc">Microbes in household products, industrial products (antibiotics, statins,
+                        biogas), biocontrol agents, biofertilisers, sewage treatment, and the role of microbes in the
+                        environment.</div>
+                    <div class="chapter-tags">
+                        <span class="tag">Antibiotics</span>
+                        <span class="tag">Biogas</span>
+                        <span class="tag">Biofertilisers</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <hr class="divider" />
+
+        <!-- ==================== UNIT 4 ==================== -->
+        <section id="unit4" class="section u4">
+            <div class="section-header">
+                <span class="unit-label">Unit IV · Chapters 11–12</span>
+                <h2>Biotechnology & Its Applications</h2>
+                <p>Cutting-edge tools and techniques reshaping medicine and agriculture.</p>
+            </div>
+            <div class="chapter-grid">
+
+                <div class="chapter-card">
+                    <div class="chapter-num">Chapter 11</div>
+                    <div class="chapter-title">Biotechnology – Principles & Processes</div>
+                    <div class="chapter-desc">Recombinant DNA technology, tools (restriction enzymes, vectors, PCR, gel
+                        electrophoresis), cloning, expression of recombinant proteins, bioreactors, downstream
+                        processing.</div>
+                    <div class="chapter-tags">
+                        <span class="tag">rDNA Technology</span>
+                        <span class="tag">PCR</span>
+                        <span class="tag">Restriction Enzymes</span>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-num">Chapter 12</div>
+                    <div class="chapter-title">Biotechnology & Its Applications</div>
+                    <div class="chapter-desc">Genetically modified organisms (GMOs), Bt crops, pest-resistant plants,
+                        golden rice, biopiracy, biosafety, transgenic animals, insulin production, gene therapy, ELISA.
+                    </div>
+                    <div class="chapter-tags">
+                        <span class="tag">Bt Crops</span>
+                        <span class="tag">Gene Therapy</span>
+                        <span class="tag">Biosafety</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <hr class="divider" />
+
+        <!-- ==================== UNIT 5 ==================== -->
+        <section id="unit5" class="section u5">
+            <div class="section-header">
+                <span class="unit-label">Unit V · Chapters 13–16</span>
+                <h2>Ecology & Environment</h2>
+                <p>Explore the relationships between organisms and their environment at every scale.</p>
+            </div>
+            <div class="chapter-grid">
+
+                <div class="chapter-card">
+                    <div class="chapter-num">Chapter 13</div>
+                    <div class="chapter-title">Organisms & Populations</div>
+                    <div class="chapter-desc">Ecology levels, abiotic factors, population attributes, population growth
+                        models (exponential & logistic), life history variations, population interactions (mutualism,
+                        predation, commensalism, parasitism, competition).</div>
+                    <div class="chapter-tags">
+                        <span class="tag">Population Growth</span>
+                        <span class="tag">Ecological Interactions</span>
+                        <span class="tag">Abiotic Factors</span>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-num">Chapter 14</div>
+                    <div class="chapter-title">Ecosystem</div>
+                    <div class="chapter-desc">Ecosystem structure and function, productivity, decomposition, energy
+                        flow, food chains and webs, ecological pyramids, nutrient cycling (carbon & phosphorus cycles),
+                        ecosystem services.</div>
+                    <div class="chapter-tags">
+                        <span class="tag">Energy Flow</span>
+                        <span class="tag">Nutrient Cycling</span>
+                        <span class="tag">Ecological Pyramids</span>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-num">Chapter 15</div>
+                    <div class="chapter-title">Biodiversity & Conservation</div>
+                    <div class="chapter-desc">Types of biodiversity, patterns (latitudinal gradients, species-area
+                        relationship), importance, threats (HIPPO), endangered species, in-situ and ex-situ
+                        conservation, biodiversity hotspots, sacred groves.</div>
+                    <div class="chapter-tags">
+                        <span class="tag">Hotspots</span>
+                        <span class="tag">Conservation</span>
+                        <span class="tag">Endangered Species</span>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-num">Chapter 16</div>
+                    <div class="chapter-title">Environmental Issues</div>
+                    <div class="chapter-desc">Air and water pollution, agrochemicals, solid waste management,
+                        radioactive waste, greenhouse effect, ozone depletion, deforestation, case studies — Chipko
+                        movement, JFM, reforestation.</div>
+                    <div class="chapter-tags">
+                        <span class="tag">Pollution</span>
+                        <span class="tag">Climate Change</span>
+                        <span class="tag">Ozone Depletion</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>🧬 <span>BioXII Portal</span> — Class XII Biology · NCERT · CBSE</p>
+        <p style="margin-top:0.5rem; font-size:0.78rem;">Content based on the official NCERT Biology textbook (Class
+            XII). For educational purposes only.</p>
+    </footer>
+
+</body>
+
+</html>
